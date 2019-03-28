@@ -36,3 +36,10 @@ Follow these steps to start developing with this project:
 3. `cd` into the repository
 4. Activate virtualenv: `pipenv shell`
 5. Install dependencies: `pipenv install`
+
+
+## Build Wheel
+
+```
+$ python setup.py bdist_wheel
+```
