@@ -1,6 +1,15 @@
+#
+#   Command line interface and program entry point
+#
+
 from argparse import Action, ArgumentParser
 
+
 class DriverAction(Action):
+    """
+    Extends argparse action to include driver
+    and destination values in the namespace.
+    """
     def __call__(self,parser,namespace,values,option_string=None):
         driver, destination = values
         namespace.driver = driver.lower()
@@ -8,6 +17,9 @@ class DriverAction(Action):
     
     
 def create_parser():
+    """
+    Arg creation for destination and driver.
+    """
     parser = ArgumentParser(description="""
     Back up PostgreSQL databases locally or to AWS S3.
     """)
